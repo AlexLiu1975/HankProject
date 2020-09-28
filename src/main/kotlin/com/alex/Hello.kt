@@ -2,10 +2,15 @@ package com.alex
 
 fun main() {
     println("Hello kotlin..")
-    Human().hello()
 
-    val h = Human()
-    h.hello()
+
+    val b = Human(66.5f, 1.7f)
+
+
+
+
+    println(b.hello())
+
 
 //    變數
 /*
@@ -21,13 +26,22 @@ fun main() {
     name = "Alex"
     println(name)
 
+    val h = Human(66.5f, 1.7f)
+    print(h.bmi())
+
 
 
 
 
 }
 
-class Human(){
+class Human(var weight: Float, var height: Float) {
+    fun bmi():Float {
+        val bmi = weight / (height * height)
+        return bmi
+    }
+
+
     fun hello() {
         println("Hello human")
     }
